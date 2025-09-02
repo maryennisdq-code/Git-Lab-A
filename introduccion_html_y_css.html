@@ -1,0 +1,169 @@
+<!-- ==== Archivo: Introduccion.html ==== -->
+<!-- Guarda este bloque como `Introduccion.html` y coloca el archivo `styles.css` (más abajo) en la misma carpeta. -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Introducción - Equipo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Presentación del Equipo</h1>
+    <p class="lead">Somos una constelación de ideas—cada miembro con su propia órbita. Aquí estamos para presentarnos.</p>
+  </header>
+
+  <main class="container">
+    <!-- Tarjeta de cada miembro: duplica este bloque para más integrantes -->
+    <section class="team-grid">
+
+      <article class="card">
+        <img src="https://via.placeholder.com/400x400?text=Foto+1" alt="Foto de Ana Pérez" class="avatar">
+        <div class="card-body">
+          <h2>Ana Pérez</h2>
+          <p class="role">Líder de proyecto</p>
+          <ul class="info">
+            <li><strong>Cédula:</strong> 8-765-432</li>
+            <li><strong>Correo:</strong> ana.perez@ejemplo.com</li>
+            <li><strong>Rol:</strong> Diseño UX / Coordinación</li>
+          </ul>
+          <p class="bio">Me encanta convertir problemas en mapas claros. Trabajo la experiencia como quien esculpe luz.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://via.placeholder.com/400x400?text=Foto+2" alt="Foto de Jorge Díaz" class="avatar">
+        <div class="card-body">
+          <h2>Jorge Díaz</h2>
+          <p class="role">Desarrollador</p>
+          <ul class="info">
+            <li><strong>Cédula:</strong> 8-123-456</li>
+            <li><strong>Correo:</strong> jorge.diaz@ejemplo.com</li>
+            <li><strong>Rol:</strong> Backend / Integración</li>
+          </ul>
+          <p class="bio">La lógica es música; programo para que todo suene afinado en producción.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://via.placeholder.com/400x400?text=Foto+3" alt="Foto de María López" class="avatar">
+        <div class="card-body">
+          <h2>María López</h2>
+          <p class="role">QA / Documentación</p>
+          <ul class="info">
+            <li><strong>Cédula:</strong> 8-987-654</li>
+            <li><strong>Correo:</strong> maria.lopez@ejemplo.com</li>
+            <li><strong>Rol:</strong> Pruebas / Manuales</li>
+          </ul>
+          <p class="bio">Detecto lo que otros no ven y escribo el mapa para que el equipo avance seguro.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://via.placeholder.com/400x400?text=Foto+4" alt="Foto de Luis Fernández" class="avatar">
+        <div class="card-body">
+          <h2>Luis Fernández</h2>
+          <p class="role">Front-end / UI</p>
+          <ul class="info">
+            <li><strong>Cédula:</strong> 8-555-333</li>
+            <li><strong>Correo:</strong> luis.fernandez@ejemplo.com</li>
+            <li><strong>Rol:</strong> Interfaces / Animaciones</li>
+          </ul>
+          <p class="bio">Construyo las caras bonitas del proyecto y me peleo con CSS cuando hace falta.</p>
+        </div>
+      </article>
+
+    </section>
+
+    <footer class="credits">
+      <p>Proyecto: Introducción - Curso UTP • Fecha: <time datetime="2025-09-02">02 septiembre 2025</time></p>
+    </footer>
+  </main>
+
+</body>
+</html>
+
+
+/* ==== Archivo: styles.css ==== */
+/* Guarda este bloque como `styles.css` en la misma carpeta que Introduccion.html */
+:root{
+  --bg:#0f1724; /* noche profunda */
+  --card:#0b1120; /* tarjeta */
+  --muted:#9aa4b2;
+  --accent:#6ee7b7; /* verde suave */
+  --glass: rgba(255,255,255,0.03);
+  --radius:14px;
+  --maxw:1100px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: 'Segoe UI', Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg,var(--bg),#071022 120%);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:40px 16px;
+}
+.container{
+  max-width:var(--maxw);
+  margin:0 auto;
+}
+.site-header{
+  text-align:center;
+  margin-bottom:28px;
+}
+.site-header h1{
+  margin:0 0 6px 0;
+  font-size:2.1rem;
+  letter-spacing:0.6px;
+}
+.lead{color:var(--muted); margin-top:0}
+
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+  align-items:start;
+}
+.card{
+  background:linear-gradient(180deg,var(--card), #071428);
+  border-radius:var(--radius);
+  padding:14px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  transition:transform .32s ease, box-shadow .32s ease;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.card:hover{transform:translateY(-6px); box-shadow:0 18px 36px rgba(2,6,23,0.8)}
+.avatar{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  border-radius:10px;
+  display:block;
+  margin-bottom:12px;
+}
+.card-body h2{margin:0 0 6px 0}
+.role{color:var(--accent); font-weight:600; margin:0 0 8px 0}
+.info{list-style:none; padding:0; margin:0 0 10px 0; color:var(--muted)}
+.info li{font-size:0.95rem; margin:6px 0}
+.bio{margin:0; color:#cfe8df}
+.credits{margin-top:26px; text-align:center; color:var(--muted); font-size:0.95rem}
+
+/* Estilos responsivos y accesibilidad */
+@media (max-width:520px){
+  .avatar{height:200px}
+  body{padding:20px 12px}
+}
+
+/* Pequeño helper: imprimir sin fondo oscuro */
+@media print{
+  body{background:white; color:black}
+  .card{box-shadow:none}
+}
+
+/* --- Fin de styles.css --- */
